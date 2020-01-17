@@ -4,8 +4,13 @@
   "description": "Personal Portfolio Page for Clinton Gillespie, from Brisbane, QLD ",
   "main": "index.html",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "scss": "node-sass --watch scss -o css"
   },
   "author": "Clinnygee",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "node-sass": "^4.13.1",
+    "scss": "^0.2.4"
+  }
 }
