@@ -1,0 +1,11 @@
+{
+  "name": "personal-page",
+  "version": "1.0.0",
+  "description": "Personal Portfolio Page for Clinton Gillespie, from Brisbane, QLD ",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Clinnygee",
+  "license": "ISC"
+}
