@@ -132,6 +132,7 @@ main {
     height: 95vh;
     // background-color: #1e1e24;
     background-color: #fff;
+    border-bottom: 3px solid black;
 
     
 
@@ -146,8 +147,18 @@ main {
         height: 100%;
         padding: 5px 10px 5px 10px;
 
+        @keyframes fadeIn {
+            0%{
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
         .heading {
             // align-self: flex-start;
+            padding-top: 2%;
             color: #1e1e24;
             text-align: center;
             font-size: 40px;
@@ -164,17 +175,29 @@ main {
         }
 
         .cards {
+            animation-name: fadeIn;
+            animation-duration: 2s;
+            transition-timing-function: ease-in-out;
             display: flex;
             flex-direction: row;
             flex-wrap: wrap;
             height: 100%;
+            width: 100%;
             text-align: center;
 
             h1 {
                 color: #1e1e24;
             }
             p {
+                
                 color: lighten(#1e1e24, 10%);
+            }
+
+            i {
+                color: #1e1e24;
+                width: 50px; 
+                height: 50px;
+                transform: translate(-50%,-50%);
             }
         }
 
@@ -193,11 +216,16 @@ main {
             }
 
             .icon-container {
-                height: 40%;
+                height: 50%;
+                display: flex;
+                align-content: center;
+                justify-content: center;
+                align-items: center;
+                font-size: 5em;
             }
 
             .text-container {
-                height: 60%;
+                height: 50%;
             }
         }
     }
@@ -208,6 +236,36 @@ main {
     background-color: #fff;
     height: 95vh;
     width: 100vw;
+    border-bottom: 3px solid black;
+
+    .container {
+        
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        padding: 5px 10px 5px 10px;
+
+        @keyframes fadeIn {
+            0%{
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        .heading {
+            // align-self: flex-start;
+            padding-top: 2%;
+            color: #1e1e24;
+            text-align: center;
+            font-size: 40px;
+            margin-top: 5px;
+            text-transform: uppercase;
+            animation-name: slide-in-left;
+            animation-duration: 1s;
+        }
+    }
 }
 
 .contact {

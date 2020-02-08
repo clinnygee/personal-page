@@ -91,13 +91,21 @@ main {
 .about {
   width: 100vw;
   height: 95vh;
-  background-color: #fff; }
+  background-color: #fff;
+  border-bottom: 3px solid black; }
   .about .container {
     display: flex;
     flex-direction: column;
     height: 100%;
     padding: 5px 10px 5px 10px; }
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
     .about .container .heading {
+      padding-top: 2%;
       color: #1e1e24;
       text-align: center;
       font-size: 40px;
@@ -112,15 +120,24 @@ main {
   100% {
     transform: translateX(0px); } }
     .about .container .cards {
+      animation-name: fadeIn;
+      animation-duration: 2s;
+      transition-timing-function: ease-in-out;
       display: flex;
       flex-direction: row;
       flex-wrap: wrap;
       height: 100%;
+      width: 100%;
       text-align: center; }
       .about .container .cards h1 {
         color: #1e1e24; }
       .about .container .cards p {
         color: #353540; }
+      .about .container .cards i {
+        color: #1e1e24;
+        width: 50px;
+        height: 50px;
+        transform: translate(-50%, -50%); }
     .about .container .card {
       padding: 2% 0 2% 0;
       width: 50%;
@@ -131,14 +148,40 @@ main {
         width: 50%;
         height: 100%; }
       .about .container .card .icon-container {
-        height: 40%; }
+        height: 50%;
+        display: flex;
+        align-content: center;
+        justify-content: center;
+        align-items: center;
+        font-size: 5em; }
       .about .container .card .text-container {
-        height: 60%; }
+        height: 50%; }
 
 .projects {
   background-color: #fff;
   height: 95vh;
-  width: 100vw; }
+  width: 100vw;
+  border-bottom: 3px solid black; }
+  .projects .container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 5px 10px 5px 10px; }
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+    .projects .container .heading {
+      padding-top: 2%;
+      color: #1e1e24;
+      text-align: center;
+      font-size: 40px;
+      margin-top: 5px;
+      text-transform: uppercase;
+      animation-name: slide-in-left;
+      animation-duration: 1s; }
 
 .contact {
   background-color: #fff;

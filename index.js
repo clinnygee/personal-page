@@ -56,7 +56,7 @@ class navigation {
     // pair it in an object with it's nav link
     // store the currently active nav item.
     constructor (){
-        console.log('in constructor')
+        // an array of the navigation links
         const navLinks = document.querySelectorAll('.page-link');
 
         this.contentScrollDistance = document.querySelector('.content').offsetTop;
@@ -124,7 +124,10 @@ class navigation {
     };
 
     navUpdate = () => {
-        
+
+        // need to add a function here, that is called on scroll, that will call updateActive
+        // depending on which portion of content is currently displayed.
+        this.checkActive();
         if (this.page.scrollTop >= this.contentScrollDistance){
             // set nav to .sticky
             this.nav.classList.add('sticky')
@@ -137,6 +140,23 @@ class navigation {
             this.nav.classList.remove('sticky')
         }
     };
+
+    checkActive = () => {
+        console.log(this.page.scrollTop);
+        let scrollTop = this.page.scrollTop;
+
+        if(scrollTop >= this.header.position && scrollTop < this.about.position){
+            this.updateActive(this.header)
+        } else if (scrollTop >= this.about.position && scrollTop < this.projects.position){
+            this.updateActive(this.about)
+        } else if (scrollTop >= this.projects.position && scrollTop < this.contact.position){
+            this.updateActive(this.projects)
+        } else {
+            // this does not currently work
+            this.updateActive(this.contact)
+        }
+        
+    }
 
     updateActive = (element) => {
         // clears the .active class from this.active
