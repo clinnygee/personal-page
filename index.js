@@ -128,6 +128,7 @@ class navigation {
         // need to add a function here, that is called on scroll, that will call updateActive
         // depending on which portion of content is currently displayed.
         this.checkActive();
+        
         if (this.page.scrollTop >= this.contentScrollDistance){
             // set nav to .sticky
             this.nav.classList.add('sticky')
