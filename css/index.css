@@ -170,8 +170,7 @@ main {
 .projects {
   background-color: #fff;
   height: 95vh;
-  width: 100vw;
-  border-bottom: 3px solid black; }
+  width: 100vw; }
   .projects .container {
     display: flex;
     flex-direction: column;
@@ -258,9 +257,44 @@ main {
     transform: translateY(0); } }
 
 .contact {
-  background-color: #fff;
+  background-color: #ffcf99;
   height: 95vh;
-  width: 100vw; }
+  width: 100vw;
+  display: flex;
+  flex-direction: column; }
+  .contact .triangle {
+    width: 100vw;
+    height: 100px;
+    background-color: white;
+    clip-path: polygon(0% 0%, 100% 0%, 50% 100%, 0% 0%); }
+  .contact .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column; }
+    .contact .container .heading {
+      padding-top: 2%;
+      color: #1e1e24;
+      text-align: center;
+      font-size: 40px;
+      margin-top: 5px;
+      text-transform: uppercase;
+      animation-name: slide-in-left;
+      animation-duration: 1s; }
+    .contact .container .form {
+      width: 400px;
+      margin-top: 50px; }
+      .contact .container .form input {
+        background: #ffe7cc;
+        border: 0;
+        box-sizing: border-box;
+        color: #fff;
+        display: block;
+        font-size: 12pt;
+        margin-bottom: 3px;
+        outline: none;
+        padding: 10px 15px;
+        width: 100%; }
 
 .nav {
   width: 100vw;
