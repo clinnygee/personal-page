@@ -25,6 +25,9 @@ main {
   justify-content: center;
   text-align: center;
   /* this is for when something is clicked */ }
+  @media (max-width: 768px) {
+    .header {
+      font-size: 12px; } }
   .header h1 {
     color: #fff8f0;
     letter-spacing: 0.2em; }
@@ -93,6 +96,9 @@ main {
   height: 95vh;
   background-color: #fff;
   border-bottom: 3px solid black; }
+  @media (max-width: 768px) {
+    .about {
+      height: auto; } }
   .about .container {
     display: flex;
     flex-direction: column;
@@ -113,6 +119,9 @@ main {
       text-transform: uppercase;
       animation-name: slide-in-left;
       animation-duration: 1s; }
+      @media (max-width: 768px) {
+        .about .container .heading {
+          font-size: 20px; } }
 
 @keyframes slide-in-left {
   0% {
@@ -144,6 +153,9 @@ main {
     .about .container .card {
       height: 40%;
       width: 400px; }
+      @media (max-width: 768px) {
+        .about .container .card {
+          height: 250px; } }
       .about .container .card .icon-container {
         height: 50%;
         display: flex;
@@ -158,6 +170,9 @@ main {
       display: flex;
       flex-direction: row;
       justify-content: center; }
+      @media (max-width: 768px) {
+        .about .container .personal {
+          flex-direction: column; } }
       .about .container .personal .photo {
         padding: 10 10 10 10;
         clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%); }
@@ -165,12 +180,15 @@ main {
         display: flex;
         flex-direction: column;
         justify-content: center;
-        padding: 0 20px 0 20px; }
+        padding: 20 20 20 20; }
 
 .projects {
   background-color: #fff;
   height: 95vh;
   width: 100vw; }
+  @media (max-width: 768px) {
+    .projects {
+      height: auto; } }
   .projects .container {
     display: flex;
     flex-direction: column;
@@ -191,6 +209,9 @@ main {
       text-transform: uppercase;
       animation-name: slide-in-left;
       animation-duration: 1s; }
+      @media (max-width: 768px) {
+        .projects .container .heading {
+          font-size: 20px; } }
     .projects .container .projects-box {
       display: flex;
       flex-direction: row;
@@ -262,6 +283,9 @@ main {
   width: 100vw;
   display: flex;
   flex-direction: column; }
+  @media (max-width: 768px) {
+    .contact {
+      height: auto; } }
   .contact .triangle {
     width: 100vw;
     height: 100px;
@@ -284,6 +308,10 @@ main {
     .contact .container .form {
       width: 400px;
       margin-top: 50px; }
+      @media (max-width: 768px) {
+        .contact .container .form {
+          width: 325px;
+          margin-bottom: 50px; } }
       .contact .container .form input {
         background: #ffe7cc;
         border: 0;
