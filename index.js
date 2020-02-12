@@ -1,52 +1,132 @@
 
+var width = (window.innerWidth > 0) ? window.innerWidth : screen.width;
 
-// const page = document.querySelector('main');
-// console.log(page)
-// console.log(page);
+const clearDesktopNavigation = () => {
+    let nav = document.querySelector('.nav');
+    nav.parentNode.removeChild(nav);
+}
 
-// const content = document.querySelector('.content');
+const clearMobileNavigation = () => {
+    let nav = document.querySelector('.mobile-nav');
+    nav.parentNode.removeChild(nav);
+}
 
-// const about = document.querySelector('about');
+class MobileNavigation {
+    constructor(){
+        const navLinks = document.querySelectorAll('.link');
 
-// const projects = document.querySelector('projects');
+        this.contentScrollDistance = document.querySelector('.content').offsetTop;
 
-// const contact = document.querySelector('contact');
+        this.nav = document.querySelector('.mobile-nav');
 
-// // find out how far content is from <main>,
-// // when you scroll to content, change the nav to a fixed position.
+        this.header = {element: navLinks[0], position: 0};
+        this.about = {element: navLinks[1], position: this.contentScrollDistance};
+        this.projects = {element: navLinks[2], position:  document.querySelector('.projects').offsetTop};
+        this.contact = {element: navLinks[3], position:  document.querySelector('.contact').offsetTop};
 
-// const scrollDistance = content.offsetTop;
+        this.active = this.header;
 
-// const nav = document.querySelector('nav');
+        // add event listeners to all nav elements, that will scroll to the correct Y co-ordinates of the screen.
 
-// console.log(nav);
+        this.contact.element.addEventListener('click', (e) => {
+            window.scrollTo({
+                top: this.contact.position,
+                left: 0,
+                behavior: "smooth",
+            });
+            this.updateActive(this.contact)
+        });
 
-// page.onscroll = function(){
-//     console.log(page.scrollTop)
-//     navUpdate();
-// }
+        this.about.element.addEventListener('click', (e) => {
+            window.scrollTo({
+                top: this.about.position,
+                left: 0,
+                behavior: "smooth",
+            });
+            this.updateActive(this.about);
+        })
 
-// const navUpdate = () => {
-//     if (page.scrollTop >= scrollDistance){
-//         // set nav to .sticky
-//         nav.classList.add('sticky')
-//     } else {
-//         nav.classList.remove('sticky')
-//     }
-// };
+        this.projects.element.addEventListener('click', (e) => {
+            window.scrollTo({
+                top: this.projects.position,
+                left: 0,
+                behavior: "smooth",
+            });
+            this.updateActive(this.projects);
+        })
 
-// const navLinks = document.querySelectorAll('.page-link');
+        this.header.element.addEventListener('click', (e) => {
+            window.scrollTo({
+                top: this.header.position,
+                left: 0,
+                behavior: "smooth",
+            });
+            this.updateActive(this.header);
+        })
+        console.log(this.header)
+        console.log(this.about);
+        console.log(this.projects);
+        console.log(this.contact)
+        this.page = document.querySelector('body');
 
-// console.log(navLinks);
+        
 
-// navLinks[0].addEventListener('click', (e) => {
-//     window.scrollTo({
-//         top: 0,
-//         left: 0,
-//         behavior: 'smooth'
-//     });
-// })
-// console.log(Array.from(document.querySelectorAll('.page-link')));
+
+        window.addEventListener('scroll', () => {
+            
+            this.navUpdate();
+        })
+        console.log(this.page)
+    }
+    navUpdate = () => {
+
+        // need to add a function here, that is called on scroll, that will call updateActive
+        // depending on which portion of content is currently displayed.
+        this.checkActive();
+        
+        if (this.page.scrollTop >= this.contentScrollDistance){
+            // set nav to .sticky
+            this.nav.classList.add('sticky')
+            // need to set section to about
+
+            // first find element with .active, and remove.active
+
+
+        } else {
+            this.nav.classList.remove('sticky')
+        }
+    };
+
+    checkActive = () => {
+        console.log(this.page.scrollTop);
+        let scrollTop = this.page.scrollTop;
+
+        if(scrollTop >= this.header.position && scrollTop < this.about.position){
+            this.updateActive(this.header)
+        } else if (scrollTop >= this.about.position && scrollTop < this.projects.position){
+            this.updateActive(this.about)
+        } else if (scrollTop >= this.projects.position && scrollTop < this.contact.position){
+            this.updateActive(this.projects)
+        } else {
+            // this does not currently work
+            this.updateActive(this.contact)
+        }
+        
+    }
+
+    updateActive = (element) => {
+        // clears the .active class from this.active
+        console.log(this.active.element);
+        this.active.element.classList.remove('active');
+        console.log(this.active);
+
+        this.active = element;
+        console.log(this.active)
+
+        this.active.element.classList.add('active');
+        console.log(this.active);
+    };
+}
 
 class navigation {
 
@@ -173,7 +253,30 @@ class navigation {
     }
 };
 
-let navigator = new navigation();
+if(width <= 768){
+    // run mobile nav set up
+    console.log('viewing from mobile device');
+    clearDesktopNavigation();
+    let navigator = new MobileNavigation();
+    const menu = document.querySelector('.hamburger');
+
+    menu.addEventListener('click', (e) => {
+        let navBar = e.target.parentNode.parentNode.parentNode;
+        console.log(navBar.classList.length);
+        navBar.classList.length > 1 ? navBar.classList.remove('open') : navBar.classList.add('open');
+        console.log(navBar.classList);
+    })
+} else {
+    // run desktop nav setup
+    clearMobileNavigation();
+    let navigator = new navigation();
+}
+
+
+
+
+
+// let navigator = new navigation();
 
 
 
