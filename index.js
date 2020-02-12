@@ -84,17 +84,17 @@ class MobileNavigation {
         // depending on which portion of content is currently displayed.
         this.checkActive();
         
-        if (this.page.scrollTop >= this.contentScrollDistance){
-            // set nav to .sticky
-            this.nav.classList.add('sticky')
-            // need to set section to about
+        // if (this.page.scrollTop >= this.contentScrollDistance){
+        //     // set nav to .sticky
+        //     this.nav.classList.add('sticky')
+        //     // need to set section to about
 
-            // first find element with .active, and remove.active
+        //     // first find element with .active, and remove.active
 
 
-        } else {
-            this.nav.classList.remove('sticky')
-        }
+        // } else {
+        //     this.nav.classList.remove('sticky')
+        // }
     };
 
     checkActive = () => {

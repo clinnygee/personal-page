@@ -473,7 +473,7 @@ main {
     display: flex;
     flex-direction: row-reverse;
     flex-direction: column;
-    background-color: #ffcf99;
+    // background-color: #ffcf99;
     
     align-items: flex-end;
     padding-top: 10px;
@@ -512,13 +512,16 @@ main {
     height: 200px !important;
     animation-name: grow-open;
     animation-duration: 1.5s;
+    background-color: #ffcf99;
 }
 
 @keyframes grow-open {
     0%{
+        background-color: lighten(#ffcf99, 75);
         height: 49px;
     }
     100% {
+        background-color: #ffcf99;
         height: 210px;
     }
 }
@@ -610,4 +613,8 @@ footer {
             font-size: 40px;
         }
     }
+}
+
+a {
+    color: #fff;
 }

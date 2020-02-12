@@ -333,7 +333,6 @@ main {
   display: flex;
   flex-direction: row-reverse;
   flex-direction: column;
-  background-color: #ffcf99;
   align-items: flex-end;
   padding-top: 10px;
   z-index: 100; }
@@ -364,12 +363,15 @@ main {
 .open {
   height: 200px !important;
   animation-name: grow-open;
-  animation-duration: 1.5s; }
+  animation-duration: 1.5s;
+  background-color: #ffcf99; }
 
 @keyframes grow-open {
   0% {
+    background-color: white;
     height: 49px; }
   100% {
+    background-color: #ffcf99;
     height: 210px; } }
 
 .nav {
@@ -438,3 +440,6 @@ footer {
       width: 100px;
       height: 100px;
       font-size: 40px; }
+
+a {
+  color: #fff; }
