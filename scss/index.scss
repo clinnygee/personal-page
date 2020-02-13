@@ -460,6 +460,10 @@ main {
                 width: 100%;
 
             }
+
+            #my-form-button{
+                cursor: pointer;
+            }
         }
     }
 }
@@ -500,16 +504,18 @@ main {
         color: #91240c;
         animation-name: active;
         animation-duration: 1s;
-        transform: scale(1.1);
+        // transform: scale(1.1);
     }
     @keyframes active {
         0%{color: lighten($color: #91240c, $amount: 100%)}
-        100%{color: #91240c; transform: scale(1.1);}
+        100%{color: #91240c; 
+            // transform: scale(1.1);
+        }
     }
 };
 
 .open {
-    height: 200px !important;
+    height: 210px !important;
     animation-name: grow-open;
     animation-duration: 1.5s;
     background-color: #ffcf99;

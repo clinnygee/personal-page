@@ -350,18 +350,16 @@ main {
   .mobile-nav .active {
     color: #91240c;
     animation-name: active;
-    animation-duration: 1s;
-    transform: scale(1.1); }
+    animation-duration: 1s; }
 
 @keyframes active {
   0% {
     color: white; }
   100% {
-    color: #91240c;
-    transform: scale(1.1); } }
+    color: #91240c; } }
 
 .open {
-  height: 200px !important;
+  height: 210px !important;
   animation-name: grow-open;
   animation-duration: 1.5s;
   background-color: #ffcf99; }
