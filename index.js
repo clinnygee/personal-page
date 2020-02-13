@@ -69,6 +69,7 @@ class MobileNavigation {
 
         this.header = {element: navLinks[0], position: 0};
         this.about = {element: navLinks[1], position: this.contentScrollDistance};
+        this.aboutButton = document.querySelector('#about-button');
         this.projects = {element: navLinks[2], position:  document.querySelector('.projects').offsetTop};
         this.contact = {element: navLinks[3], position:  document.querySelector('.contact').offsetTop};
 
@@ -92,7 +93,16 @@ class MobileNavigation {
                 behavior: "smooth",
             });
             this.updateActive(this.about);
-        })
+        });
+
+        this.aboutButton.addEventListener('click', (e) => {
+            window.scrollTo({
+                top: this.about.position,
+                left: 0,
+                behavior: "smooth",
+            });
+            this.updateActive(this.about);
+        });
 
         this.projects.element.addEventListener('click', (e) => {
             window.scrollTo({
@@ -111,10 +121,10 @@ class MobileNavigation {
             });
             this.updateActive(this.header);
         })
-        console.log(this.header)
-        console.log(this.about);
-        console.log(this.projects);
-        console.log(this.contact)
+        // console.log(this.header)
+        // console.log(this.about);
+        // console.log(this.projects);
+        // console.log(this.contact)
         this.page = document.querySelector('body');
 
         
@@ -124,7 +134,7 @@ class MobileNavigation {
             
             this.navUpdate();
         })
-        console.log(this.page)
+        // console.log(this.page)
     }
     navUpdate = () => {
 
@@ -193,6 +203,7 @@ class navigation {
 
         this.header = {element: navLinks[0], position: 0};
         this.about = {element: navLinks[1], position: this.contentScrollDistance};
+        this.aboutButton = document.querySelector('#about-button');
         this.projects = {element: navLinks[2], position:  document.querySelector('.projects').offsetTop};
         this.contact = {element: navLinks[3], position:  document.querySelector('.contact').offsetTop};
 
@@ -216,7 +227,16 @@ class navigation {
                 behavior: "smooth",
             });
             this.updateActive(this.about);
-        })
+        });
+
+        this.aboutButton.addEventListener('click', (e) => {
+            window.scrollTo({
+                top: this.about.position,
+                left: 0,
+                behavior: "smooth",
+            });
+            this.updateActive(this.about);
+        });
 
         this.projects.element.addEventListener('click', (e) => {
             window.scrollTo({
@@ -235,10 +255,10 @@ class navigation {
             });
             this.updateActive(this.header);
         })
-        console.log(this.header)
-        console.log(this.about);
-        console.log(this.projects);
-        console.log(this.contact)
+        // console.log(this.header)
+        // console.log(this.about);
+        // console.log(this.projects);
+        // console.log(this.contact)
         this.page = document.querySelector('body');
 
         
@@ -248,7 +268,7 @@ class navigation {
             
             this.navUpdate();
         })
-        console.log(this.page)
+        // console.log(this.page)
     };
 
     navUpdate = () => {
@@ -271,7 +291,7 @@ class navigation {
     };
 
     checkActive = () => {
-        console.log(this.page.scrollTop);
+        // console.log(this.page.scrollTop);
         let scrollTop = this.page.scrollTop;
 
         if(scrollTop >= this.header.position && scrollTop < this.about.position){
@@ -289,30 +309,30 @@ class navigation {
 
     updateActive = (element) => {
         // clears the .active class from this.active
-        console.log(this.active.element);
+        // console.log(this.active.element);
         this.active.element.classList.remove('active');
-        console.log(this.active);
+        // console.log(this.active);
 
         this.active = element;
-        console.log(this.active)
+        // console.log(this.active)
 
         this.active.element.classList.add('active');
-        console.log(this.active);
+        // console.log(this.active);
     }
 };
 
 if(width <= 768){
     // run mobile nav set up
-    console.log('viewing from mobile device');
+    // console.log('viewing from mobile device');
     clearDesktopNavigation();
     let navigator = new MobileNavigation();
     const menu = document.querySelector('.hamburger');
 
     menu.addEventListener('click', (e) => {
         let navBar = e.target.parentNode.parentNode.parentNode;
-        console.log(navBar.classList.length);
+        // console.log(navBar.classList.length);
         navBar.classList.length > 1 ? navBar.classList.remove('open') : navBar.classList.add('open');
-        console.log(navBar.classList);
+        // console.log(navBar.classList);
     })
 } else {
     // run desktop nav setup
