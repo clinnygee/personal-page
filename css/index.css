@@ -323,6 +323,8 @@ main {
         outline: none;
         padding: 10px 15px;
         width: 100%; }
+      .contact .container .form #my-form-button {
+        cursor: pointer; }
 
 .mobile-nav {
   position: fixed;
