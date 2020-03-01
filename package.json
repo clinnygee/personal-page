@@ -10,7 +10,10 @@
   "author": "Clinnygee",
   "license": "ISC",
   "dependencies": {
+    "autoprefixer": "^9.7.4",
     "node-sass": "^4.13.1",
+    "postcss-cli": "^7.1.0",
+    "postcss-plugins": "^1.13.1",
     "scss": "^0.2.4"
   }
 }
