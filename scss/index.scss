@@ -96,6 +96,10 @@ main {
         justify-content: center;
         align-items: center;
 
+        @media (max-width:768px) {
+            height: 100px;
+        }
+
     }
     button {
         height: 33%;
@@ -490,6 +494,7 @@ main {
       justify-self: flex-end;
       font-size: 1.3em;  
       color: #91240c;
+      cursor: pointer;
       
     }
     .link {
