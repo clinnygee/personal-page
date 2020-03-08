@@ -77,7 +77,7 @@ class MobileNavigation {
 
         // add event listeners to all nav elements, that will scroll to the correct Y co-ordinates of the screen.
 
-        this.contact.element.addEventListener('click touchstart', (e) => {
+        this.contact.element.addEventListener('click', (e) => {
             window.scrollTo({
                 top: this.contact.position,
                 left: 0,
@@ -86,7 +86,7 @@ class MobileNavigation {
             this.updateActive(this.contact)
         });
 
-        this.about.element.addEventListener('click touchstart', (e) => {
+        this.about.element.addEventListener('click', (e) => {
             window.scrollTo({
                 top: this.about.position,
                 left: 0,
@@ -95,7 +95,7 @@ class MobileNavigation {
             this.updateActive(this.about);
         });
 
-        this.aboutButton.addEventListener('click touchstart', (e) => {
+        this.aboutButton.addEventListener('click', (e) => {
             window.scrollTo({
                 top: this.about.position,
                 left: 0,
@@ -104,7 +104,7 @@ class MobileNavigation {
             this.updateActive(this.about);
         });
 
-        this.projects.element.addEventListener('click touchstart', (e) => {
+        this.projects.element.addEventListener('click', (e) => {
             window.scrollTo({
                 top: this.projects.position,
                 left: 0,
@@ -113,7 +113,7 @@ class MobileNavigation {
             this.updateActive(this.projects);
         })
 
-        this.header.element.addEventListener('click touchstart', (e) => {
+        this.header.element.addEventListener('click', (e) => {
             window.scrollTo({
                 top: this.header.position,
                 left: 0,
@@ -211,7 +211,7 @@ class navigation {
 
         // add event listeners to all nav elements, that will scroll to the correct Y co-ordinates of the screen.
 
-        this.contact.element.addEventListener('click touchstart', (e) => {
+        this.contact.element.addEventListener('click', (e) => {
             window.scrollTo({
                 top: this.contact.position,
                 left: 0,
@@ -220,7 +220,7 @@ class navigation {
             this.updateActive(this.contact)
         });
 
-        this.about.element.addEventListener('click touchstart', (e) => {
+        this.about.element.addEventListener('click', (e) => {
             window.scrollTo({
                 top: this.about.position,
                 left: 0,
@@ -229,7 +229,7 @@ class navigation {
             this.updateActive(this.about);
         });
 
-        this.aboutButton.addEventListener('click touchstart', (e) => {
+        this.aboutButton.addEventListener('click', (e) => {
             window.scrollTo({
                 top: this.about.position,
                 left: 0,
@@ -238,7 +238,7 @@ class navigation {
             this.updateActive(this.about);
         });
 
-        this.projects.element.addEventListener('click touchstart', (e) => {
+        this.projects.element.addEventListener('click', (e) => {
             window.scrollTo({
                 top: this.projects.position,
                 left: 0,
@@ -247,7 +247,7 @@ class navigation {
             this.updateActive(this.projects);
         })
 
-        this.header.element.addEventListener('click touchstart', (e) => {
+        this.header.element.addEventListener('click', (e) => {
             window.scrollTo({
                 top: this.header.position,
                 left: 0,
