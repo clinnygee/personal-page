@@ -37,6 +37,13 @@ main {
         font-size: 12px;
     }
 
+    @media (max-width: 500px) and (-webkit-device-pixel-ratio: 2){
+        font-size: 12px;
+    }
+    @media (max-width: 500px) and (-webkit-device-pixel-ratio: 3){
+        font-size: 12px;
+    }
+
     h1 {
         color: #fff8f0;
         letter-spacing: 0.2em;
@@ -100,6 +107,13 @@ main {
             height: 100px;
         }
 
+        @media (max-width: 500px) and (-webkit-device-pixel-ratio: 2){
+            height: 100px;
+        }
+        @media (max-width: 500px) and (-webkit-device-pixel-ratio: 3){
+            height: 100px;
+        }
+
     }
     button {
         height: 33%;
@@ -137,12 +151,20 @@ main {
 .about {
     // position: absolute;
     width: 100vw;
-    height: 95vh;
+    min-height: 95vh;
+    max-height: auto;
     // background-color: #1e1e24;
     background-color: #fff;
     border-bottom: 3px solid black;
 
     @media (max-width: 768px) {
+        height: auto;
+    }
+
+    @media (max-width: 500px) and (-webkit-device-pixel-ratio: 2){
+        height: auto;
+    }
+    @media (max-width: 500px) and (-webkit-device-pixel-ratio: 3){
         height: auto;
     }
 
@@ -178,6 +200,13 @@ main {
             animation-duration: 1s;
 
             @media (max-width: 768px) {
+                font-size: 20px;
+            }
+
+            @media (max-width: 500px) and (-webkit-device-pixel-ratio: 2){
+                font-size: 20px;
+            }
+            @media (max-width: 500px) and (-webkit-device-pixel-ratio: 3){
                 font-size: 20px;
             }
         }
@@ -224,6 +253,12 @@ main {
             @media (max-width: 768px) {
                 height: 250px;
             }
+            @media (max-width: 500px) and (-webkit-device-pixel-ratio: 2){
+                height: 200px;
+            }
+            @media (max-width: 500px) and (-webkit-device-pixel-ratio: 3){
+                height: 200px;
+            }
 
             .icon-container {
                 height: 50%;
@@ -247,6 +282,12 @@ main {
             justify-content: center;
 
             @media (max-width: 768px) {
+                flex-direction: column;
+            }
+            @media (max-width: 500px) and (-webkit-device-pixel-ratio: 2){
+                flex-direction: column;
+            }
+            @media (max-width: 500px) and (-webkit-device-pixel-ratio: 3){
                 flex-direction: column;
             }
             .photo {
@@ -274,6 +315,12 @@ main {
     @media (max-width: 768px) {
         height: auto;
     }   
+    @media (max-width: 500px) and (-webkit-device-pixel-ratio: 2){
+        height: auto;
+    }
+    @media (max-width: 500px) and (-webkit-device-pixel-ratio: 3){
+        height: auto;   
+    }
     
 
     .container {
@@ -305,6 +352,12 @@ main {
 
             @media (max-width: 768px) {
                 font-size: 20px;
+            }
+            @media (max-width: 500px) and (-webkit-device-pixel-ratio: 2){
+                font-size: 20px;
+            }
+            @media (max-width: 500px) and (-webkit-device-pixel-ratio: 3){
+             font-size: 20px;   
             }
         }
 
@@ -415,6 +468,12 @@ main {
     @media (max-width: 768px) {
      height: auto;   
     }
+    @media (max-width: 500px) and (-webkit-device-pixel-ratio: 2){
+        height: auto;
+    }
+    @media (max-width: 500px) and (-webkit-device-pixel-ratio: 3){
+        height: auto;   
+    }
 
     .triangle{
         width: 100vw;
@@ -447,6 +506,14 @@ main {
             margin-top: 50px;
 
             @media (max-width: 768px) {
+                width: 325px;
+                margin-bottom: 50px;
+            }
+            @media (max-width: 500px) and (-webkit-device-pixel-ratio: 2){
+                width: 325px;
+                margin-bottom: 50px;
+            }
+            @media (max-width: 500px) and (-webkit-device-pixel-ratio: 3){
                 width: 325px;
                 margin-bottom: 50px;
             }

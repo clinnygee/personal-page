@@ -28,6 +28,12 @@ main {
   @media (max-width: 768px) {
     .header {
       font-size: 12px; } }
+  @media (max-width: 500px) and (-webkit-device-pixel-ratio: 2) {
+    .header {
+      font-size: 12px; } }
+  @media (max-width: 500px) and (-webkit-device-pixel-ratio: 3) {
+    .header {
+      font-size: 12px; } }
   .header h1 {
     color: #fff8f0;
     letter-spacing: 0.2em; }
@@ -70,6 +76,12 @@ main {
     @media (max-width: 768px) {
       .header .button {
         height: 100px; } }
+    @media (max-width: 500px) and (-webkit-device-pixel-ratio: 2) {
+      .header .button {
+        height: 100px; } }
+    @media (max-width: 500px) and (-webkit-device-pixel-ratio: 3) {
+      .header .button {
+        height: 100px; } }
   .header button {
     height: 33%;
     width: 200px;
@@ -96,10 +108,17 @@ main {
 
 .about {
   width: 100vw;
-  height: 95vh;
+  min-height: 95vh;
+  max-height: auto;
   background-color: #fff;
   border-bottom: 3px solid black; }
   @media (max-width: 768px) {
+    .about {
+      height: auto; } }
+  @media (max-width: 500px) and (-webkit-device-pixel-ratio: 2) {
+    .about {
+      height: auto; } }
+  @media (max-width: 500px) and (-webkit-device-pixel-ratio: 3) {
     .about {
       height: auto; } }
   .about .container {
@@ -123,6 +142,12 @@ main {
       animation-name: slide-in-left;
       animation-duration: 1s; }
       @media (max-width: 768px) {
+        .about .container .heading {
+          font-size: 20px; } }
+      @media (max-width: 500px) and (-webkit-device-pixel-ratio: 2) {
+        .about .container .heading {
+          font-size: 20px; } }
+      @media (max-width: 500px) and (-webkit-device-pixel-ratio: 3) {
         .about .container .heading {
           font-size: 20px; } }
 
@@ -159,6 +184,12 @@ main {
       @media (max-width: 768px) {
         .about .container .card {
           height: 250px; } }
+      @media (max-width: 500px) and (-webkit-device-pixel-ratio: 2) {
+        .about .container .card {
+          height: 200px; } }
+      @media (max-width: 500px) and (-webkit-device-pixel-ratio: 3) {
+        .about .container .card {
+          height: 200px; } }
       .about .container .card .icon-container {
         height: 50%;
         display: flex;
@@ -176,6 +207,12 @@ main {
       @media (max-width: 768px) {
         .about .container .personal {
           flex-direction: column; } }
+      @media (max-width: 500px) and (-webkit-device-pixel-ratio: 2) {
+        .about .container .personal {
+          flex-direction: column; } }
+      @media (max-width: 500px) and (-webkit-device-pixel-ratio: 3) {
+        .about .container .personal {
+          flex-direction: column; } }
       .about .container .personal .photo {
         padding: 10 10 10 10;
         clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%); }
@@ -190,6 +227,12 @@ main {
   height: 95vh;
   width: 100vw; }
   @media (max-width: 768px) {
+    .projects {
+      height: auto; } }
+  @media (max-width: 500px) and (-webkit-device-pixel-ratio: 2) {
+    .projects {
+      height: auto; } }
+  @media (max-width: 500px) and (-webkit-device-pixel-ratio: 3) {
     .projects {
       height: auto; } }
   .projects .container {
@@ -213,6 +256,12 @@ main {
       animation-name: slide-in-left;
       animation-duration: 1s; }
       @media (max-width: 768px) {
+        .projects .container .heading {
+          font-size: 20px; } }
+      @media (max-width: 500px) and (-webkit-device-pixel-ratio: 2) {
+        .projects .container .heading {
+          font-size: 20px; } }
+      @media (max-width: 500px) and (-webkit-device-pixel-ratio: 3) {
         .projects .container .heading {
           font-size: 20px; } }
     .projects .container .projects-box {
@@ -289,6 +338,12 @@ main {
   @media (max-width: 768px) {
     .contact {
       height: auto; } }
+  @media (max-width: 500px) and (-webkit-device-pixel-ratio: 2) {
+    .contact {
+      height: auto; } }
+  @media (max-width: 500px) and (-webkit-device-pixel-ratio: 3) {
+    .contact {
+      height: auto; } }
   .contact .triangle {
     width: 100vw;
     height: 100px;
@@ -312,6 +367,14 @@ main {
       width: 400px;
       margin-top: 50px; }
       @media (max-width: 768px) {
+        .contact .container .form {
+          width: 325px;
+          margin-bottom: 50px; } }
+      @media (max-width: 500px) and (-webkit-device-pixel-ratio: 2) {
+        .contact .container .form {
+          width: 325px;
+          margin-bottom: 50px; } }
+      @media (max-width: 500px) and (-webkit-device-pixel-ratio: 3) {
         .contact .container .form {
           width: 325px;
           margin-bottom: 50px; } }
