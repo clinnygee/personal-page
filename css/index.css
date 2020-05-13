@@ -175,12 +175,14 @@ main {
         color: #353540; }
       .about .container .cards i {
         color: #1e1e24;
-        width: 50px;
-        height: 50px;
-        transform: translate(-50%, -50%); }
+        width: 100px; }
     .about .container .card {
-      height: 40%;
-      width: 400px; }
+      height: 200px;
+      width: 400px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column; }
       @media (max-width: 768px) {
         .about .container .card {
           height: 250px; } }
@@ -192,8 +194,8 @@ main {
           height: 200px; } }
       .about .container .card .icon-container {
         height: 50%;
+        width: 100%;
         display: flex;
-        align-content: center;
         justify-content: center;
         align-items: center;
         font-size: 5em; }
@@ -267,10 +269,12 @@ main {
     .projects .container .projects-box {
       display: flex;
       flex-direction: row;
-      justify-content: center; }
+      justify-content: center;
+      height: 100%; }
       .projects .container .projects-box .project {
-        width: 400px;
-        height: 600px;
+        width: 300px;
+        height: 100%;
+        background-size: contain;
         margin: 0 40px 0 40px;
         background-image: url("https://res.cloudinary.com/clinnygee/image/upload/v1581292830/WeatherApi_z7vbi9.png");
         background-size: cover;
@@ -501,7 +505,8 @@ footer {
     width: 300px;
     display: flex;
     flex-wrap: wrap;
-    flex-direction: row; }
+    flex-direction: row;
+    justify-content: center; }
     footer .container .socials-button {
       padding-top: 10px;
       width: 100px;
