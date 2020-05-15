@@ -156,7 +156,7 @@ class MobileNavigation {
     };
 
     checkActive = () => {
-        console.log(this.page.scrollTop);
+        // console.log(this.page.scrollTop);
         let scrollTop = this.page.scrollTop;
 
         if(scrollTop >= this.header.position && scrollTop < this.about.position){
@@ -174,15 +174,15 @@ class MobileNavigation {
 
     updateActive = (element) => {
         // clears the .active class from this.active
-        console.log(this.active.element);
+        // console.log(this.active.element);
         this.active.element.classList.remove('active');
-        console.log(this.active);
+        // console.log(this.active);
 
         this.active = element;
-        console.log(this.active)
+        // console.log(this.active)
 
         this.active.element.classList.add('active');
-        console.log(this.active);
+        // console.log(this.active);
     };
 }
 
