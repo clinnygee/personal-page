@@ -338,7 +338,9 @@ if(width <= 768){
     // run desktop nav setup
     clearMobileNavigation();
     let navigator = new navigation();
-}
+};
+
+
 
 
 
