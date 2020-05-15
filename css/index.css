@@ -226,17 +226,8 @@ main {
 
 .projects {
   background-color: #fff;
-  height: 95vh;
+  min-height: 95vh;
   width: 100vw; }
-  @media (max-width: 768px) {
-    .projects {
-      height: auto; } }
-  @media (max-width: 500px) and (-webkit-device-pixel-ratio: 2) {
-    .projects {
-      height: auto; } }
-  @media (max-width: 500px) and (-webkit-device-pixel-ratio: 3) {
-    .projects {
-      height: auto; } }
   .projects .container {
     display: flex;
     flex-direction: column;
@@ -266,16 +257,31 @@ main {
       @media (max-width: 500px) and (-webkit-device-pixel-ratio: 3) {
         .projects .container .heading {
           font-size: 20px; } }
+    .projects .container p {
+      font-size: 25px;
+      color: #1e1e24;
+      text-align: center; }
+      @media (max-width: 768px) {
+        .projects .container p {
+          font-size: 15px; } }
+      @media (max-width: 500px) and (-webkit-device-pixel-ratio: 2) {
+        .projects .container p {
+          font-size: 15px; } }
+      @media (max-width: 500px) and (-webkit-device-pixel-ratio: 3) {
+        .projects .container p {
+          font-size: 15px; } }
     .projects .container .projects-box {
       display: flex;
       flex-direction: row;
       justify-content: center;
-      height: 100%; }
+      height: 100%;
+      min-height: 600px; }
       .projects .container .projects-box .project {
         width: 300px;
-        height: 100%;
+        min-height: 500px;
+        height: inherit;
         background-size: contain;
-        margin: 0 40px 0 40px;
+        margin: 15px 40px 0 40px;
         background-image: url("https://res.cloudinary.com/clinnygee/image/upload/v1581292830/WeatherApi_z7vbi9.png");
         background-size: cover;
         background-repeat: no-repeat;
