@@ -409,13 +409,33 @@ main {
                 height: inherit;
                 background-size: contain;
                 margin: 15px 40px 0 40px;
-                background-image: url('https://res.cloudinary.com/clinnygee/image/upload/v1581292830/WeatherApi_z7vbi9.png');
+                // background-image: url('https://res.cloudinary.com/clinnygee/image/upload/v1581292830/WeatherApi_z7vbi9.png');
                 background-size: cover;
                 background-repeat: no-repeat;
                 display: flex;
                 flex-direction: column;
+                position: relative;
 
 
+            }
+
+            .project-image {
+                width: 300px;
+                min-height: 500px;
+                height: inherit;
+                
+                display: flex;
+                flex-direction: column;
+                position: relative;
+            }
+
+            .project-image:hover{
+                opacity: 1;
+            }
+// 
+            .project-image:hover .hidden {
+                display: flex;
+                opacity: 1 !important;
             }
 
             .project:hover {
@@ -432,6 +452,8 @@ main {
                 
                 flex-direction: column;
                 height: 100%;
+                position: absolute;
+                width: 100%;
 
                 .description {
                     height: 60%;

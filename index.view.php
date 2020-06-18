@@ -1,3 +1,5 @@
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -7,7 +9,7 @@
     <title>Clinton Gillespie - Web Developer</title>
     
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css' type="text/css">
-    <link rel="stylesheet" href="./build/index.css">
+    <link rel="stylesheet" type= 'text/css' href="/build/index.css">
     
 </head>
 <body>
@@ -29,10 +31,10 @@
                 Contact
             </div>
         </div>
-
+       
         <header class="header">
             <h1><span class='heading-white'>Hello, I'm </span><span class="name">Clinton Gillespie</span><span class='heading-white'>.</span></h1>
-            <h1><span class='heading-white'>I'm a front-end web developer.</span></h1>
+            <h1><span class='heading-white'>I'm a Developer from Brisbane</span></h1>
             <div class="button">
                 <button id='about-button'>
                     Check me out!
@@ -65,7 +67,7 @@
                             </div>
                             <div class="text-container">
                                 <h1>Technologies</h1>
-                                <p>ES6, HTML, CSS, Java, Ruby, PSQL</p>
+                                <p>ES6, HTML, CSS, PHP, Linux, SQL</p>
                             </div>
 
                         </div>
@@ -108,25 +110,34 @@
                     <div class="heading"><h1>Projects</h1></div>
                     <p >Projects i have completed, or am working on.</p>
                     <div class='projects-box'>
-                        <div class="project">
-                            <div class="hidden">
-                                <div class="description"></div>
-                                <div class="link">
-                                    <a href="https://clinnygee.github.io/weather-api-app-BOM/">
-                                        <button>
-                                            View
-                                        </button>
-                                    </a>
-                                   <a href="https://github.com/clinnygee/weather-api-app-BOM">
-                                    <button>
-                                        Check the source!
-                                    </button>
-                                    </a>
-                                    
+                    <?php foreach($projects as $project) : ?>
+                        
+                            
+                                <div class="project">
+                                <img src=<?=$project['image'] ?> class='project-image'>
+                                    <div class="hidden">
+                                        <div class="description"></div>
+                                        <div class="link">
+                                            <a href=<?= $project['url']?>>
+                                                <button>
+                                                    View
+                                                </button>
+                                            </a>
+                                           <a href=<?=$project['github'] ?>>
+                                            <button>
+                                                Check the source!
+                                            </button>
+                                            </a>
+
+                                        </div>
+
+                                    </div>
+                                </img>
                                 </div>
-                                
-                            </div>
-                        </div>
+                            
+                        
+                    <?php endforeach ?>
+                    </div>
                     </div>
                 </div>
                 
