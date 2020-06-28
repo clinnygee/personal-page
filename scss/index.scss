@@ -627,10 +627,11 @@ main {
     display: flex;
     flex-direction: row-reverse;
     flex-direction: column;
+    line-height:1.2;
     // background-color: #ffcf99;
     
     align-items: flex-end;
-    padding-top: 10px;
+    // padding-top: 10px;
     z-index: 100;
 
     
@@ -641,6 +642,7 @@ main {
       font-size: 1.3em;  
       color: #91240c;
       cursor: pointer;
+      padding: 0 8px;
       
     }
     .link {

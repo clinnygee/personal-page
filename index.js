@@ -271,6 +271,14 @@ class navigation {
         // console.log(this.page)
     };
 
+    showNavItems = () => {
+
+    };
+
+    removeNavItems = () => {
+        
+    }
+
     navUpdate = () => {
 
         // need to add a function here, that is called on scroll, that will call updateActive

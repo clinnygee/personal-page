@@ -447,15 +447,16 @@ main {
   display: flex;
   flex-direction: row-reverse;
   flex-direction: column;
+  line-height: 1.2;
   align-items: flex-end;
-  padding-top: 10px;
   z-index: 100; }
   .mobile-nav .hamburger {
     margin-right: 20px;
     justify-self: flex-end;
     font-size: 1.3em;
     color: #91240c;
-    cursor: pointer; }
+    cursor: pointer;
+    padding: 0 8px; }
   .mobile-nav .link {
     width: 100%;
     padding: 4px 5px 4px 20px;
