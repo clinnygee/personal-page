@@ -18,18 +18,7 @@
             <div class="hamburger">
                 <h1><i class="fas fa-bars"></i></h1>
             </div>
-            <div class="link">
-                Home
-            </div>
-            <div class="link">
-                About
-            </div>
-            <div class="link">
-                Projects
-            </div>
-            <div class="link">
-                Contact
-            </div>
+            
         </div>
        
         <header class="header">
