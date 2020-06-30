@@ -61,130 +61,225 @@ const clearMobileNavigation = () => {
 
 class MobileNavigation {
     constructor(){
-        const navLinks = document.querySelectorAll('.link');
+        this.container = document.querySelector('.mobile-nav');
+        this.button = document.querySelector('.hamburger');
+        this.open = false;
 
-        this.contentScrollDistance = document.querySelector('.content').offsetTop;
-
-        this.nav = document.querySelector('.mobile-nav');
-
-        this.header = {element: navLinks[0], position: 0};
-        this.about = {element: navLinks[1], position: this.contentScrollDistance};
-        this.aboutButton = document.querySelector('#about-button');
-        this.projects = {element: navLinks[2], position:  document.querySelector('.projects').offsetTop};
-        this.contact = {element: navLinks[3], position:  document.querySelector('.contact').offsetTop};
-
-        this.active = this.header;
-
-        // add event listeners to all nav elements, that will scroll to the correct Y co-ordinates of the screen.
-
-        this.contact.element.addEventListener('click', (e) => {
-            window.scrollTo({
-                top: this.contact.position,
-                left: 0,
-                behavior: "smooth",
-            });
-            this.updateActive(this.contact)
+        this.button.addEventListener('click', () => {
+            console.log(this.onOpen);
+            !this.open ? this.onOpen() : this.onClose();
+            console.log('i have been clicked')
         });
-
-        this.about.element.addEventListener('click', (e) => {
-            window.scrollTo({
-                top: this.about.position,
-                left: 0,
-                behavior: "smooth",
-            });
-            this.updateActive(this.about);
-        });
-
-        this.aboutButton.addEventListener('click', (e) => {
-            window.scrollTo({
-                top: this.about.position,
-                left: 0,
-                behavior: "smooth",
-            });
-            this.updateActive(this.about);
-        });
-
-        this.projects.element.addEventListener('click', (e) => {
-            window.scrollTo({
-                top: this.projects.position,
-                left: 0,
-                behavior: "smooth",
-            });
-            this.updateActive(this.projects);
-        })
-
-        this.header.element.addEventListener('click', (e) => {
-            window.scrollTo({
-                top: this.header.position,
-                left: 0,
-                behavior: "smooth",
-            });
-            this.updateActive(this.header);
-        })
-        // console.log(this.header)
-        // console.log(this.about);
-        // console.log(this.projects);
-        // console.log(this.contact)
-        this.page = document.querySelector('body');
-
-        
-
-
-        window.addEventListener('scroll', () => {
-            
-            this.navUpdate();
-        })
-        // console.log(this.page)
-    }
-    navUpdate = () => {
-
-        // need to add a function here, that is called on scroll, that will call updateActive
-        // depending on which portion of content is currently displayed.
-        this.checkActive();
-        
-        // if (this.page.scrollTop >= this.contentScrollDistance){
-        //     // set nav to .sticky
-        //     this.nav.classList.add('sticky')
-        //     // need to set section to about
-
-        //     // first find element with .active, and remove.active
-
-
-        // } else {
-        //     this.nav.classList.remove('sticky')
-        // }
     };
 
-    checkActive = () => {
-        // console.log(this.page.scrollTop);
-        let scrollTop = this.page.scrollTop;
-
-        if(scrollTop >= this.header.position && scrollTop < this.about.position){
-            this.updateActive(this.header)
-        } else if (scrollTop >= this.about.position && scrollTop < this.projects.position){
-            this.updateActive(this.about)
-        } else if (scrollTop >= this.projects.position && scrollTop < this.contact.position){
-            this.updateActive(this.projects)
-        } else {
-            // this does not currently work
-            this.updateActive(this.contact)
-        }
-        
+    onOpen(){
+        console.log('i have been called')
+        let home = document.createElement('div');
+        home.className = 'link';
+        home.innerHTML = 'Home';
+        home.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                left:0,
+                behavior: "smooth"
+            });
+            this.onClose();
+        })
+        let about = document.createElement('div');
+        about.className= 'link';
+        about.innerHTML='About';
+        about.addEventListener('click', () => {
+            window.scrollTo({
+                top: document.querySelector('.about').offsetTop,
+                left:0,
+                behavior: "smooth",
+            });
+            this.onClose();
+        })
+        let project = document.createElement('div');
+        project.className = 'link';
+        project.innerHTML = 'Projects';
+        project.addEventListener('click', () => {
+            window.scrollTo({
+                top: document.querySelector('.projects').offsetTop,
+                left:0,
+                behavior: "smooth"
+            });
+            this.onClose();
+        })
+        let contact = document.createElement('div');
+        contact.className='link';
+        contact.innerHTML = 'Contact me';
+        contact.addEventListener('click', () => {
+            window.scrollTo({
+                top: document.querySelector('.contact').offsetTop,
+                behavior: "smooth"
+            });
+            this.onClose();
+        })
+        this.container.appendChild(home);
+        this.container.appendChild(about);
+        this.container.appendChild(project);
+        this.container.appendChild(contact);
+        this.open = true;
+        this.container.classList.add('open');
     }
 
-    updateActive = (element) => {
-        // clears the .active class from this.active
-        // console.log(this.active.element);
-        this.active.element.classList.remove('active');
-        // console.log(this.active);
-
-        this.active = element;
-        // console.log(this.active)
-
-        this.active.element.classList.add('active');
-        // console.log(this.active);
-    };
+    onClose(){
+        let links = document.querySelectorAll('.link');
+        links.forEach(link => {
+            link.remove();
+        });
+        this.open= false;
+        this.container.classList.remove('open');
+    }
 }
+
+// class MobileNavigation {
+//     constructor(){
+//         // const navLinks = document.querySelectorAll('.link');
+
+//         const mobileNav= document.querySelector('.mobile-nav');
+//         console.log(mobileNav);
+
+//         let home = document.createElement('div');
+//         home.className = 'link';
+//         home.innerHTML = 'Home';
+//         let about = document.createElement('div');
+//         about.className= 'link';
+//         about.innerHTML='About';
+//         let project = document.createElement('div');
+//         project.className = 'link';
+//         project.innerHTML = 'Projects';
+//         let contact = document.createElement('div');
+//         contact.className='link';
+//         contact.innerHTML = 'Contact me';
+//         mobileNav.appendChild(home);
+//         mobileNav.appendChild(about);
+//         mobileNav.appendChild(project);
+//         mobileNav.appendChild(contact)
+//         this.contentScrollDistance = document.querySelector('.content').offsetTop;
+
+//         this.nav = document.querySelector('.mobile-nav');
+
+//         this.header = {element: navLinks[0], position: 0};
+//         this.about = {element: navLinks[1], position: this.contentScrollDistance};
+//         this.aboutButton = document.querySelector('#about-button');
+//         this.projects = {element: navLinks[2], position:  document.querySelector('.projects').offsetTop};
+//         this.contact = {element: navLinks[3], position:  document.querySelector('.contact').offsetTop};
+
+//         this.active = this.header;
+
+//         // add event listeners to all nav elements, that will scroll to the correct Y co-ordinates of the screen.
+
+//         this.contact.element.addEventListener('click', (e) => {
+//             window.scrollTo({
+//                 top: this.contact.position,
+//                 left: 0,
+//                 behavior: "smooth",
+//             });
+//             this.updateActive(this.contact)
+//         });
+
+//         this.about.element.addEventListener('click', (e) => {
+//             window.scrollTo({
+//                 top: this.about.position,
+//                 left: 0,
+//                 behavior: "smooth",
+//             });
+//             this.updateActive(this.about);
+//         });
+
+//         this.aboutButton.addEventListener('click', (e) => {
+//             window.scrollTo({
+//                 top: this.about.position,
+//                 left: 0,
+//                 behavior: "smooth",
+//             });
+//             this.updateActive(this.about);
+//         });
+
+//         this.projects.element.addEventListener('click', (e) => {
+//             window.scrollTo({
+//                 top: this.projects.position,
+//                 left: 0,
+//                 behavior: "smooth",
+//             });
+//             this.updateActive(this.projects);
+//         })
+
+//         this.header.element.addEventListener('click', (e) => {
+//             window.scrollTo({
+//                 top: this.header.position,
+//                 left: 0,
+//                 behavior: "smooth",
+//             });
+//             this.updateActive(this.header);
+//         })
+//         // console.log(this.header)
+//         // console.log(this.about);
+//         // console.log(this.projects);
+//         // console.log(this.contact)
+//         this.page = document.querySelector('body');
+
+        
+
+
+//         window.addEventListener('scroll', () => {
+            
+//             this.navUpdate();
+//         })
+//         // console.log(this.page)
+//     }
+//     navUpdate = () => {
+
+//         // need to add a function here, that is called on scroll, that will call updateActive
+//         // depending on which portion of content is currently displayed.
+//         this.checkActive();
+        
+//         // if (this.page.scrollTop >= this.contentScrollDistance){
+//         //     // set nav to .sticky
+//         //     this.nav.classList.add('sticky')
+//         //     // need to set section to about
+
+//         //     // first find element with .active, and remove.active
+
+
+//         // } else {
+//         //     this.nav.classList.remove('sticky')
+//         // }
+//     };
+
+//     checkActive = () => {
+//         // console.log(this.page.scrollTop);
+//         let scrollTop = this.page.scrollTop;
+
+//         if(scrollTop >= this.header.position && scrollTop < this.about.position){
+//             this.updateActive(this.header)
+//         } else if (scrollTop >= this.about.position && scrollTop < this.projects.position){
+//             this.updateActive(this.about)
+//         } else if (scrollTop >= this.projects.position && scrollTop < this.contact.position){
+//             this.updateActive(this.projects)
+//         } else {
+//             // this does not currently work
+//             this.updateActive(this.contact)
+//         }
+        
+//     }
+
+//     updateActive = (element) => {
+//         // clears the .active class from this.active
+//         // console.log(this.active.element);
+//         this.active.element.classList.remove('active');
+//         // console.log(this.active);
+
+//         this.active = element;
+//         // console.log(this.active)
+
+//         this.active.element.classList.add('active');
+//         // console.log(this.active);
+//     };
+// }
 
 class navigation {
 
@@ -336,12 +431,12 @@ if(width <= 768){
     let navigator = new MobileNavigation();
     const menu = document.querySelector('.hamburger');
 
-    menu.addEventListener('click', (e) => {
-        let navBar = e.target.parentNode.parentNode.parentNode;
-        // console.log(navBar.classList.length);
-        navBar.classList.length > 1 ? navBar.classList.remove('open') : navBar.classList.add('open');
-        // console.log(navBar.classList);
-    })
+    // menu.addEventListener('click', (e) => {
+    //     let navBar = e.target.parentNode.parentNode.parentNode;
+    //     // console.log(navBar.classList.length);
+    //     navBar.classList.length > 1 ? navBar.classList.remove('open') : navBar.classList.add('open');
+    //     // console.log(navBar.classList);
+    // })
 } else {
     // run desktop nav setup
     clearMobileNavigation();
