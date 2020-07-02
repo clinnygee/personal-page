@@ -86,7 +86,7 @@
                             </div>
                             <div class="personal-text">
                                 <h1>Who Am I?</h1>
-                                <p>I'm Clinton Gillespie (@clinnygee), I'm a web developer based in brisbane. I focus on creating dynamic UIs using React. I have been developing for two years, and I hope to work together someday.</p>
+                                <p>I'm Clinton Gillespie (@clinnygee), I'm a web developer based in brisbane. I focus on creating dynamic UIs using React, and Backends using Node or Laravel. I have been developing for two years, and I hope to work together someday.</p>
                             </div>
                         </div>
                     </div>

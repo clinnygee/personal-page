@@ -266,6 +266,7 @@ main {
             align-items: center;
             justify-content: center;
             flex-direction:column;
+            margin: 8px 0;
             @media (max-width: 768px) {
                 height: 250px;
             }

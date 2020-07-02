@@ -186,7 +186,8 @@ main {
       display: flex;
       align-items: center;
       justify-content: center;
-      flex-direction: column; }
+      flex-direction: column;
+      margin: 8px 0; }
       @media (max-width: 768px) {
         .about .container .card {
           height: 250px; } }
