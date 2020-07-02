@@ -81,13 +81,18 @@
                             </div>
                         </div>
                         <div class="personal">
-                            <div class="photo">
-                                <img src="https://res.cloudinary.com/clinnygee/image/upload/v1581214646/86179952_474236889938915_7228609587585220608_n_o006he.jpg" alt="Clinton Gillespie" height="250" width="250">
+                            <div class="avatar">
+                            <h1>Who Am I?</h1>
+                                <img src="https://res.cloudinary.com/clinnygee/image/upload/v1581214646/86179952_474236889938915_7228609587585220608_n_o006he.jpg" alt="Clinton Gillespie" class="user">
+                                <p>I'm Clinton Gillespie (@clinnygee), 
+                                    I'm a web developer based in brisbane. 
+                                    I focus on creating dynamic UIs using React, and Backends using Node or Laravel. 
+                                    I have been developing for two years, and I hope to work together someday.
+                                </p>
                             </div>
-                            <div class="personal-text">
-                                <h1>Who Am I?</h1>
-                                <p>I'm Clinton Gillespie (@clinnygee), I'm a web developer based in brisbane. I focus on creating dynamic UIs using React, and Backends using Node or Laravel. I have been developing for two years, and I hope to work together someday.</p>
-                            </div>
+                                                            
+                                
+                            
                         </div>
                     </div>
                     

@@ -1,3 +1,7 @@
+$image-size: 200px;
+$bounce-color: #ffcf99;
+$bounce-color-hover: #ffcf99;
+
 * {
     margin: 0;
     padding: 0;
@@ -293,6 +297,8 @@ main {
 
         }
 
+        
+
         .personal {
             width: 1200px;
             display: flex;
@@ -308,16 +314,38 @@ main {
             @media (max-width: 500px) and (-webkit-device-pixel-ratio: 3){
                 flex-direction: column;
             }
-            .photo {
-                padding: 10 10 10 10;
-                clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
-            }
+            // .photo {
+            //     padding: 10 10 10 10;
+            //     clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
+            // }
 
-            .personal-text {
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                padding: 20 20 20 20;
+            // .personal-text {
+            //     display: flex;
+            //     flex-direction: column;
+            //     justify-content: center;
+            //     padding: 20 20 20 20;
+            // }
+            .avatar{
+                margin: 25px auto;
+                
+                img.user{
+                    height: $image-size;
+                    width: $image-size;
+                    background-color: $bounce-color;
+                    box-shadow: 0 0 0 5px $bounce-color;
+                    border-radius: 50%;
+
+                    &:hover{
+                        animation: bounceOut 1s linear;
+                    }
+                }
+            }
+            h1{
+                margin: 16px;
+            }
+            p {
+                margin: 16px;
+                max-width: 400px;
             }
         }
         
@@ -779,4 +807,12 @@ footer {
 
 a {
     color: #fff;
+}
+
+@keyframes bounceOut {
+    0%{ box-shadow: 0 0 0 4px $bounce-color-hover; opacity:1;}
+    25%{ box-shadow: 0 0 0 1px $bounce-color-hover; opacity:1;}
+    50%{ box-shadow: 0 0 0 7px $bounce-color-hover; opacity:1; }
+    75%{ box-shadow: 0 0 0 4px $bounce-color-hover; opacity:1;}
+    100%{ box-shadow: 0 0 0 5px $bounce-color-hover; opacity:1;}
 }

@@ -220,14 +220,21 @@ main {
       @media (max-width: 500px) and (-webkit-device-pixel-ratio: 3) {
         .about .container .personal {
           flex-direction: column; } }
-      .about .container .personal .photo {
-        padding: 10 10 10 10;
-        clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%); }
-      .about .container .personal .personal-text {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        padding: 20 20 20 20; }
+      .about .container .personal .avatar {
+        margin: 25px auto; }
+        .about .container .personal .avatar img.user {
+          height: 200px;
+          width: 200px;
+          background-color: #ffcf99;
+          box-shadow: 0 0 0 5px #ffcf99;
+          border-radius: 50%; }
+          .about .container .personal .avatar img.user:hover {
+            animation: bounceOut 1s linear; }
+      .about .container .personal h1 {
+        margin: 16px; }
+      .about .container .personal p {
+        margin: 16px;
+        max-width: 400px; }
 
 .projects {
   background-color: #fff;
@@ -559,3 +566,20 @@ footer {
 
 a {
   color: #fff; }
+
+@keyframes bounceOut {
+  0% {
+    box-shadow: 0 0 0 4px #ffcf99;
+    opacity: 1; }
+  25% {
+    box-shadow: 0 0 0 1px #ffcf99;
+    opacity: 1; }
+  50% {
+    box-shadow: 0 0 0 7px #ffcf99;
+    opacity: 1; }
+  75% {
+    box-shadow: 0 0 0 4px #ffcf99;
+    opacity: 1; }
+  100% {
+    box-shadow: 0 0 0 5px #ffcf99;
+    opacity: 1; } }
