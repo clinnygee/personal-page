@@ -455,8 +455,20 @@ main {
   flex-direction: row-reverse;
   flex-direction: column;
   line-height: 1.2;
+  max-height: 200px;
   align-items: flex-end;
+  padding-top: 10px;
   z-index: 100; }
+  .mobile-nav .mobile-nav-links {
+    width: 100%;
+    max-height: 100px;
+    animation: navLinksGrow 1.5s linear; }
+
+@keyframes navLinksGrow {
+  0% {
+    max-height: 0px; }
+  100% {
+    max-height: 100px; } }
   .mobile-nav .hamburger {
     margin-right: 20px;
     justify-self: flex-end;
@@ -491,10 +503,10 @@ main {
 @keyframes grow-open {
   0% {
     background-color: white;
-    height: 49px; }
+    max-height: 49px; }
   100% {
     background-color: #ffcf99;
-    height: 210px; } }
+    max-height: 200px; } }
 
 .nav {
   width: 100vw;

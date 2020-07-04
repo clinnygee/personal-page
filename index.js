@@ -63,6 +63,7 @@ const clearMobileNavigation = () => {
 class MobileNavigation {
     constructor(){
         this.container = document.querySelector('.mobile-nav');
+        // this.linksContainer = document.querySelector('.mobile-nav-links');
         this.button = document.querySelector('.hamburger');
         this.open = false;
 
@@ -74,6 +75,8 @@ class MobileNavigation {
     };
 
     onOpen(){
+        let linksContainer = document.createElement('div');
+        linksContainer.className = 'mobile-nav-links';
         console.log('i have been called')
         let home = document.createElement('div');
         home.className = 'link';
@@ -118,15 +121,22 @@ class MobileNavigation {
             });
             this.onClose();
         })
-        this.container.appendChild(home);
-        this.container.appendChild(about);
-        this.container.appendChild(project);
-        this.container.appendChild(contact);
+        this.container.appendChild(linksContainer);
+        linksContainer.appendChild(home);
+        linksContainer.appendChild(about);
+        linksContainer.appendChild(project);
+        linksContainer.appendChild(contact);
+        
+        // this.container.appendChild(home);
+        // this.container.appendChild(about);
+        // this.container.appendChild(project);
+        // this.container.appendChild(contact);
         this.open = true;
         this.container.classList.add('open');
     }
 
     onClose(){
+        document.querySelector('.mobile-nav-links').remove();
         let links = document.querySelectorAll('.link');
         links.forEach(link => {
             link.remove();
