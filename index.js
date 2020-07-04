@@ -1,5 +1,6 @@
 
 var width = (window.innerWidth > 0) ? window.innerWidth : screen.width;
+const touchEvent = 'ontouchstart' in window ? 'touchstart' : 'click';
 
 // get the form elements defined in your form HTML above
     
@@ -65,7 +66,7 @@ class MobileNavigation {
         this.button = document.querySelector('.hamburger');
         this.open = false;
 
-        this.button.addEventListener('click', () => {
+        this.button.addEventListener(touchEvent, () => {
             console.log(this.onOpen);
             !this.open ? this.onOpen() : this.onClose();
             console.log('i have been clicked')
@@ -77,7 +78,7 @@ class MobileNavigation {
         let home = document.createElement('div');
         home.className = 'link';
         home.innerHTML = 'Home';
-        home.addEventListener('click', () => {
+        home.addEventListener(touchEvent, () => {
             window.scrollTo({
                 top: 0,
                 left:0,
@@ -88,7 +89,7 @@ class MobileNavigation {
         let about = document.createElement('div');
         about.className= 'link';
         about.innerHTML='About';
-        about.addEventListener('click', () => {
+        about.addEventListener(touchEvent, () => {
             window.scrollTo({
                 top: document.querySelector('.about').offsetTop,
                 left:0,
@@ -99,7 +100,7 @@ class MobileNavigation {
         let project = document.createElement('div');
         project.className = 'link';
         project.innerHTML = 'Projects';
-        project.addEventListener('click', () => {
+        project.addEventListener(touchEvent, () => {
             window.scrollTo({
                 top: document.querySelector('.projects').offsetTop,
                 left:0,
@@ -110,7 +111,7 @@ class MobileNavigation {
         let contact = document.createElement('div');
         contact.className='link';
         contact.innerHTML = 'Contact me';
-        contact.addEventListener('click', () => {
+        contact.addEventListener(touchEvent, () => {
             window.scrollTo({
                 top: document.querySelector('.contact').offsetTop,
                 behavior: "smooth"
@@ -172,7 +173,7 @@ class MobileNavigation {
 
 //         // add event listeners to all nav elements, that will scroll to the correct Y co-ordinates of the screen.
 
-//         this.contact.element.addEventListener('click', (e) => {
+//         this.contact.element.addEventListener(touchEvent, (e) => {
 //             window.scrollTo({
 //                 top: this.contact.position,
 //                 left: 0,
