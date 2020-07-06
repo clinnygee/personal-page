@@ -67,6 +67,16 @@ class MobileNavigation {
         this.button = document.querySelector('.hamburger');
         this.open = false;
 
+        let aboutButton = document.querySelector('#about-button');
+
+        aboutButton.addEventListener(touchEvent, () => {
+            window.scrollTo({
+                top: document.querySelector('.about').offsetTop,
+                left: 0,
+                behavior: "smooth",
+            })
+        })
+
         this.button.addEventListener(touchEvent, () => {
             console.log(this.onOpen);
             !this.open ? this.onOpen() : this.onClose();
