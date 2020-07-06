@@ -394,8 +394,10 @@ class navigation {
         this.checkActive();
         console.log('this is how far you have scroll', this.page.scrollTop);
         console.log('content starts here', this.contentScrollDistance);
+
+        let scrolled =  (window.pageYOffset !== undefined) ? window.pageYOffset : (document.documentElement || document.body.parentNode || document.body).scrollTop;
         
-        if (this.page.scrollTop >= this.contentScrollDistance){
+        if (scrolled >= this.contentScrollDistance){
             // set nav to .sticky
             this.nav.classList.add('sticky')
             // need to set section to about
@@ -410,7 +412,7 @@ class navigation {
 
     checkActive = () => {
         // console.log(this.page.scrollTop);
-        let scrollTop = this.page.scrollTop;
+        let scrollTop = (window.pageYOffset !== undefined) ? window.pageYOffset : (document.documentElement || document.body.parentNode || document.body).scrollTop;
 
         if(scrollTop >= this.header.position && scrollTop < this.about.position){
             this.updateActive(this.header)
