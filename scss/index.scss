@@ -134,6 +134,7 @@ main {
         border-style: solid;
         letter-spacing: 0.1em;
         box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+        cursor: pointer;
     }
 
     button:hover {
@@ -767,6 +768,7 @@ main {
         width: 15%;
         font-size: 20px;
         font-weight: bold;
+        cursor: pointer;
     }
 
     .active {

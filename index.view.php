@@ -83,7 +83,7 @@
                         <div class="personal">
                             <div class="avatar">
                             <h1>Who Am I?</h1>
-                                <img src="https://res.cloudinary.com/clinnygee/image/upload/v1581214646/86179952_474236889938915_7228609587585220608_n_o006he.jpg" alt="Clinton Gillespie" class="user">
+                                <img src="https://res.cloudinary.com/clinnygee/image/upload/v1594015157/mugshot_b1koep.jpg" alt="Clinton Gillespie" class="user">
                                 <p>I'm Clinton Gillespie (@clinnygee), 
                                     I'm a web developer based in brisbane. 
                                     I focus on creating dynamic UIs using React, and Backends using Node or Laravel. 

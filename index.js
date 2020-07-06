@@ -303,6 +303,8 @@ class navigation {
         // an array of the navigation links
         const navLinks = document.querySelectorAll('.page-link');
 
+        console.log(navLinks);
+
         this.contentScrollDistance = document.querySelector('.content').offsetTop;
 
         this.nav = document.querySelector('.nav');
@@ -390,6 +392,8 @@ class navigation {
         // need to add a function here, that is called on scroll, that will call updateActive
         // depending on which portion of content is currently displayed.
         this.checkActive();
+        console.log('this is how far you have scroll', this.page.scrollTop);
+        console.log('content starts here', this.contentScrollDistance);
         
         if (this.page.scrollTop >= this.contentScrollDistance){
             // set nav to .sticky
