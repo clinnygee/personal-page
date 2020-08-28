@@ -78,16 +78,16 @@ class MobileNavigation {
         })
 
         this.button.addEventListener(touchEvent, () => {
-            console.log(this.onOpen);
+            // console.log(this.onOpen);
             !this.open ? this.onOpen() : this.onClose();
-            console.log('i have been clicked')
+            // console.log('i have been clicked')
         });
     };
 
     onOpen(){
         let linksContainer = document.createElement('div');
         linksContainer.className = 'mobile-nav-links';
-        console.log('i have been called')
+        // console.log('i have been called')
         let home = document.createElement('div');
         home.className = 'link';
         home.innerHTML = 'Home';
@@ -313,7 +313,7 @@ class navigation {
         // an array of the navigation links
         const navLinks = document.querySelectorAll('.page-link');
 
-        console.log(navLinks);
+        // console.log(navLinks);
 
         this.contentScrollDistance = document.querySelector('.content').offsetTop;
 
@@ -402,8 +402,8 @@ class navigation {
         // need to add a function here, that is called on scroll, that will call updateActive
         // depending on which portion of content is currently displayed.
         this.checkActive();
-        console.log('this is how far you have scroll', this.page.scrollTop);
-        console.log('content starts here', this.contentScrollDistance);
+        // console.log('this is how far you have scroll', this.page.scrollTop);
+        // console.log('content starts here', this.contentScrollDistance);
 
         let scrolled =  (window.pageYOffset !== undefined) ? window.pageYOffset : (document.documentElement || document.body.parentNode || document.body).scrollTop;
         

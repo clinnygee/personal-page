@@ -10,7 +10,7 @@
     
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css' type="text/css">
     <link rel="stylesheet" type= 'text/css' href="/build/index.css">
-    
+    <script src="https://kit.fontawesome.com/e95f3572b7.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <main id="main">
@@ -102,35 +102,36 @@
             <section class="projects">
                 <div class="container">
                     <div class="heading"><h1>Projects</h1></div>
-                    <p >Projects i have completed, or am working on.</p>
+                    <p>Here's some things that I have made that are open source,
+                        you can view them in the browser, or check out the code on my<a href='https://github.com/clinnygee'>Github!</a>
+                    </p>
+                    <p>    
+                        Mostly i use <a href='https://reactjs.org'>React</a>, on the server I use <a href='https://nodejs.org'>Node</a> and <a href='https://sequelize.org'>Sequelize</a> for the database connection.
+                        <a href='https://clintongillespie.dev'>This</a> page (the one you are on now) is made with vanilla js and served from an nginx/PHP server.
+                    </p>
                     <div class='projects-box'>
-                    <?php foreach($projects as $project) : ?>
-                        
-                            
-                                <div class="project">
-                                <img src=<?=$project['image'] ?> class='project-image'>
-                                    <div class="hidden">
-                                        <div class="description"></div>
-                                        <div class="link">
-                                            <a href=<?= $project['url']?>>
-                                                <button>
-                                                    View
-                                                </button>
-                                            </a>
-                                           <a href=<?=$project['github'] ?>>
-                                            <button>
-                                                Check the source!
-                                            </button>
-                                            </a>
-
-                                        </div>
-
-                                    </div>
-                                </img>
+                        <?php foreach($projects as $key => $project) : ?>
+                            <div class='project'>
+                                <div class='project-image-container'>
+                                    <img src=<?=$project['image'] ?> class='project-image'>
+                                    </img>
+                                    
                                 </div>
-                            
-                        
-                    <?php endforeach ?>
+                                <div class='project-title-container'>
+                                    <span class='project-number'>No. <?= $key?></span>
+                                    <h4 class='project-title'><?=$project['title'] ?></h4>
+                                    <div style='font-size:1.2em;'>
+                                    <a class='projects-link' href=<?=$project['github']?>>
+                                        <i class="fab fa-github"></i>
+                                    </a>
+                                    <a class='projects-link' href=<?=$project['url'] ?>>
+                                        <i class="fas fa-external-link-alt"></i>
+                                    </a>
+                                    
+                                    </div>
+                                </div>
+                            </div>
+                        <?php endforeach ?>
                     </div>
                     </div>
                 </div>
@@ -192,6 +193,7 @@
 
 
     <script src="./index.js"></script>
-    <script src='./bubbles.js'></script>    
+    <script src='./bubbles.js'></script>
+    <script src='./modal.js'></script>    
 </body>
 </html>

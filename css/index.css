@@ -283,6 +283,8 @@ main {
       @media (max-width: 500px) and (-webkit-device-pixel-ratio: 3) {
         .projects .container p {
           font-size: 15px; } }
+      .projects .container p a {
+        color: #92140c; }
     .projects .container .projects-box {
       display: flex;
       flex-direction: row;
@@ -299,32 +301,45 @@ main {
         .projects .container .projects-box {
           flex-direction: column; } }
       .projects .container .projects-box .project {
-        width: 300px;
-        min-height: 500px;
-        height: inherit;
-        background-size: contain;
-        margin: 15px 40px 0 40px;
-        background-size: cover;
-        background-repeat: no-repeat;
-        display: flex;
-        flex-direction: column;
-        position: relative; }
+        margin: 20px 10px;
+        width: 330px;
+        height: 380px;
+        z-index: 100; }
         @media (max-width: 768px) {
           .projects .container .projects-box .project {
-            margin: 20px auto; } }
+            margin: 20px 10px; } }
         @media (max-width: 500px) and (-webkit-device-pixel-ratio: 2) {
           .projects .container .projects-box .project {
-            margin: 20px auto; } }
+            margin: 20px 10px; } }
         @media (max-width: 500px) and (-webkit-device-pixel-ratio: 3) {
           .projects .container .projects-box .project {
-            margin: 20px auto; } }
-      .projects .container .projects-box .project-image {
-        width: 300px;
-        min-height: 500px;
-        height: inherit;
-        display: flex;
-        flex-direction: column;
-        position: relative; }
+            margin: 20px 10px; } }
+        .projects .container .projects-box .project .project-image-container {
+          width: 100%;
+          height: 80%;
+          object-fit: cover;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background-color: #fce7cf;
+          cursor: zoom-in; }
+          .projects .container .projects-box .project .project-image-container .project-image {
+            width: 170px;
+            height: 304px;
+            max-height: 400px; }
+        .projects .container .projects-box .project .project-title-container {
+          margin: 15px 0 0;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          color: black; }
+          .projects .container .projects-box .project .project-title-container .project-number {
+            font-weight: 700; }
+          .projects .container .projects-box .project .project-title-container .project-title {
+            font-weight: 700; }
+          .projects .container .projects-box .project .project-title-container .projects-link {
+            color: #92140c;
+            margin-left: 4px; }
       .projects .container .projects-box .project-image:hover {
         opacity: 1; }
       .projects .container .projects-box .project-image:hover .hidden {
@@ -383,6 +398,48 @@ main {
     transform: translateY(-100); }
   100% {
     transform: translateY(0); } }
+
+.modal-container {
+  font-family: "Lato", sans-serif;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 999;
+  padding: 16px;
+  overflow: scroll;
+  line-height: 1.5em; }
+  .modal-container .modal {
+    max-width: 600px;
+    margin: auto;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column; }
+    .modal-container .modal .modal-header {
+      width: 100%;
+      text-align: center; }
+      .modal-container .modal .modal-header .close-button {
+        color: #92140c;
+        font-size: 2em;
+        margin: 4px;
+        float: right;
+        cursor: pointer; }
+    .modal-container .modal .modal-image-container {
+      width: 100%;
+      background-color: #fce7cf;
+      display: flex;
+      justify-content: center; }
+      .modal-container .modal .modal-image-container .modal-image {
+        width: 255px;
+        height: 456px; }
+    .modal-container .modal .modal-content-container {
+      margin: 16px;
+      text-align: center; }
+      .modal-container .modal .modal-content-container .modal-content-header {
+        padding: 4px 8px;
+        border-bottom: 1px solid #92140c;
+        font-size: 1.2em; }
 
 .contact {
   background-color: #ffcf99;

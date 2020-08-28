@@ -1,6 +1,8 @@
 $image-size: 200px;
 $bounce-color: #ffcf99;
 $bounce-color-hover: #ffcf99;
+$secondary: #92140c;
+$light-text: #fff8f0;
 
 * {
     margin: 0;
@@ -14,7 +16,7 @@ main {
     font-weight: 400;
     font-size: 16px;
     line-height: 1.9;
-    color: #fff8f0;
+    color: $light-text;
     
     display: flex;
     flex-direction: column;
@@ -49,7 +51,7 @@ main {
     }
 
     h1 {
-        color: #fff8f0;
+        color: $light-text;
         letter-spacing: 0.2em;
         z-index: 10;
         
@@ -126,11 +128,11 @@ main {
         height: 33%;
         width: 200px;
         background-color: inherit;
-        color: #fff8f0;
+        color: $light-text;
         font-family: inherit;
         font-weight: bold;
         font-size: 20px;
-        border-color: #fff8f0;
+        border-color: $light-text;
         border-style: solid;
         letter-spacing: 0.1em;
         box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
@@ -423,6 +425,9 @@ main {
             @media (max-width: 500px) and (-webkit-device-pixel-ratio: 3){
              font-size: 15px;   
             }
+            a{
+                color: $secondary;
+            }
         }
 
         .projects-box {
@@ -443,39 +448,81 @@ main {
             }
 
             .project {
-                width: 300px;
-                // height: 100%;
-                min-height: 500px;
-                height: inherit;
-                background-size: contain;
-                margin: 15px 40px 0 40px;
-                // background-image: url('https://res.cloudinary.com/clinnygee/image/upload/v1581292830/WeatherApi_z7vbi9.png');
-                background-size: cover;
-                background-repeat: no-repeat;
-                display: flex;
-                flex-direction: column;
-                position: relative;
+                // width: 300px;
+                // // height: 100%;
+                // min-height: 500px;
+                // height: inherit;
+                // background-size: contain;
+                // margin: 15px 40px 0 40px;
+                // // background-image: url('https://res.cloudinary.com/clinnygee/image/upload/v1581292830/WeatherApi_z7vbi9.png');
+                // background-size: cover;
+                // background-repeat: no-repeat;
+                // display: flex;
+                // flex-direction: column;
+                // position: relative;
+                margin: 20px 10px;
+                width: 330px;
+                height: 380px;
+                z-index: 100;
+                
 
                 @media (max-width: 768px) {
-                    margin: 20px auto;
+                    margin: 20px 10px;
                 }
                 @media (max-width: 500px) and (-webkit-device-pixel-ratio: 2){
-                    margin: 20px auto;
+                    margin: 20px 10px;
                 }
                 @media (max-width: 500px) and (-webkit-device-pixel-ratio: 3){
-                 margin: 20px auto;   
+                 margin: 20px 10px;   
+                }
+
+                .project-image-container {
+                    width: 100%;
+                    height: 80%;
+                    object-fit: cover;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    background-color: #fce7cf;
+                    cursor: zoom-in;
+    
+                    .project-image {
+                        width: 170px;
+                        height: 304px;
+                        max-height: 400px;
+                        // height: inherit;
+                        
+                        // display: flex;
+                        // flex-direction: column;
+                        // position: relative;
+                    }
+                }
+
+                .project-title-container {
+                    margin: 15px 0 0;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    color: black;
+
+                    .project-number {
+                        font-weight: 700;
+                    }
+
+                    .project-title {
+                        font-weight: 700;
+                        
+                    }
+                    .projects-link {
+                        color: $secondary;
+                        margin-left: 4px;
+                    }
                 }
             }
 
-            .project-image {
-                width: 300px;
-                min-height: 500px;
-                height: inherit;
-                
-                display: flex;
-                flex-direction: column;
-                position: relative;
-            }
+            
+
+            
 
             .project-image:hover{
                 opacity: 1;
@@ -562,6 +609,72 @@ main {
             }
         }
     }
+}
+
+.modal-container {
+    font-family: "Lato", sans-serif;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 999;
+    padding: 16px;
+    overflow: scroll;
+    line-height: 1.5em;
+
+    .modal {
+        // width: 90%;
+        // height: 90%;
+        max-width: 600px;
+        margin: auto;
+        background-color: #fff;
+        display: flex;
+        flex-direction: column;
+
+        .modal-header {
+            width: 100%;
+            text-align: center;
+            
+
+            .close-button {
+                color: $secondary;
+                font-size: 2em;
+                margin: 4px;
+                float: right;
+                cursor: pointer;
+            }
+        }
+    
+        .modal-image-container{
+            width: 100%;
+            background-color:#fce7cf;
+            display: flex;
+            justify-content: center;
+
+            .modal-image{
+                width: 255px;
+                height: 456px;
+            }
+        }
+
+        .modal-content-container {
+            margin: 16px;
+            text-align: center;
+            .modal-content-header{
+                padding: 4px 8px;
+                border-bottom: 1px solid $secondary;
+                font-size: 1.2em;
+
+            }
+
+            .modal-content{
+                
+            }
+        }
+    }
+
+    
 }
 
 
