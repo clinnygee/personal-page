@@ -85,8 +85,8 @@ main {
         height: 100px; } }
   .header button {
     z-index: 10;
-    height: 33%;
     width: 200px;
+    padding: 8px;
     background-color: inherit;
     color: #fff8f0;
     font-family: inherit;
