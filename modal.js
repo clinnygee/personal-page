@@ -29,6 +29,17 @@ const projects = [
                 You can search for foods, and add them to your diary to track to kjs and macronutrients you eat.
                 This uses React, MaterialUi, Node, Sequelize.
                 `,
+    },{
+        name:'Weight Manager',
+        url:'http://3.25.111.216',
+        github:'https://github.com/clinnygee/weight-manager',
+        title : 'Food & Calorie Tracker',
+        image:'https://res.cloudinary.com/clinnygee/image/upload/v1592182281/103986881_585404782388164_7223331908744595873_n_jexwqj.jpg',
+        about: `Very similar to MyFitnessPal. After signing up you enter your biometrics, and you will receive an estimation of your TDEE.
+                From there you can select a goal, whether you want to gain, lose or maintain weight.
+                You can search for foods, and add them to your diary to track to kjs and macronutrients you eat.
+                This uses React, MaterialUi, Node, Sequelize.
+                `,
     }
 ];
 
@@ -36,7 +47,7 @@ const projects = [
 
 const body = document.querySelector('body');
 
-const modalOpeners = document.querySelectorAll('.project-image-container');
+const modalOpeners = document.querySelectorAll('.project-image-expand');
 
 modalOpeners.forEach((button, index) => {
     button.addEventListener(touchEvent, () => {
@@ -52,6 +63,12 @@ class Modal{
         // the container, takes up 100vw/vh and sets the background to 0,0,0,0.4
         this.container = document.createElement('div');
         this.container.className = 'modal-container';
+        this.container.addEventListener(touchEvent, (e) => {
+            if(e.target !== e.currentTarget){
+                return;
+            }
+            this.remove();
+        });
         console.log(body);
         console.log(this.container);
 

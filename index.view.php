@@ -103,7 +103,7 @@
                 <div class="container">
                     <div class="heading"><h1>Projects</h1></div>
                     <p>Here's some things that I have made that are open source,
-                        you can view them in the browser, or check out the code on my<a href='https://github.com/clinnygee'>Github!</a>
+                        you can view them in the browser, or check out the code on my <a href='https://github.com/clinnygee'>Github!</a>
                     </p>
                     <p>    
                         Mostly i use <a href='https://reactjs.org'>React</a>, on the server I use <a href='https://nodejs.org'>Node</a> and <a href='https://sequelize.org'>Sequelize</a> for the database connection.
@@ -115,7 +115,9 @@
                                 <div class='project-image-container'>
                                     <img src=<?=$project['image'] ?> class='project-image'>
                                     </img>
-                                    
+                                    <div class='project-image-expand'>
+                                        <i class="fas fa-expand-arrows-alt"></i>
+                                    </div>
                                 </div>
                                 <div class='project-title-container'>
                                     <span class='project-number'>No. <?= $key?></span>
